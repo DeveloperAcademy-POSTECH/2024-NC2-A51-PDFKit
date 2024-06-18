@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct MainView: View {
-    let colums: [GridItem] = [GridItem(.adaptive(minimum: 100))]
+    @State private var showDocumentPicker = false
+    @State private var showEraserView = false
+    
+    @State private var selectedUrl: URL?
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: colums, spacing: 0) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 0) {
                 Button {
-                    
+                    showDocumentPicker = true
                 } label: {
                     newTaskButtonView
+                }
+                .sheet(isPresented: $showDocumentPicker) {
+                    DocumentPicker { url in
+                        selectedUrl = url
+                        showEraserView = true
+                    }
+                    .ignoresSafeArea()
                 }
                 
                 ForEach(0 ..< 27) { index in
@@ -33,6 +43,11 @@ struct MainView: View {
                 }
             }
             .padding(.horizontal, 20)
+            .navigationDestination(isPresented: $showEraserView) {
+                if let selectedUrl {
+                    EraserView(url: selectedUrl)
+                }
+            }
         }
     }
     
@@ -58,6 +73,37 @@ struct MainView: View {
                 .foregroundStyle(Color.black)
             
             Spacer()
+        }
+    }
+}
+
+struct DocumentPicker: UIViewControllerRepresentable {
+    var onPicked: (URL) -> Void
+    
+    func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
+        let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.pdf], asCopy: true)
+        controller.delegate = context.coordinator
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {
+        
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(onPicked: onPicked)
+    }
+    
+    class Coordinator: NSObject, UIDocumentPickerDelegate {
+        var onPicked: (URL) -> Void
+        
+        init(onPicked: @escaping (URL) -> Void) {
+            self.onPicked = onPicked
+        }
+        
+        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+            guard let url = urls.first else { return }
+            onPicked(url)
         }
     }
 }

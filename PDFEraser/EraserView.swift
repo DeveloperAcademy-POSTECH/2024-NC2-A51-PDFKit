@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EraserView: View {
+    let url: URL
     @State private var pdfKitView: PDFKitView?
     @State private var searchText = "" //찾을 텍스트
     
@@ -34,22 +35,16 @@ struct EraserView: View {
                 .padding()
             }
             
-            //임시적으로 번들 내 sample 파일과 연결해줌
-            if let pdfURL = Bundle.main.url(forResource: "sample", withExtension: "pdf") {
-                pdfKitView?
+            if let pdfKitView {
+                pdfKitView
                     .edgesIgnoringSafeArea(.all)
             } else {
                 Text("PDF not found")
             }
         }
+        .navigationTitle("\(url.lastPathComponent)")
         .onAppear {
-            if let pdfURL = Bundle.main.url(forResource: "sample", withExtension: "pdf") {
-                pdfKitView = PDFKitView(url: pdfURL, searchText: $searchText)
-            }
+            pdfKitView = PDFKitView(url: url, searchText: $searchText)
         }
     }
-}
-
-#Preview {
-    EraserView()
 }

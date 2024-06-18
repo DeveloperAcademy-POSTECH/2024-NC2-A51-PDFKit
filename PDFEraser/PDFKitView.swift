@@ -62,4 +62,8 @@ struct PDFKitView: UIViewRepresentable {
             }
         }
     }
+    
+    func showPDF(url: URL) {
+        pdfView.document = PDFDocument(url: url)
+    }
 }
