@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PDFKit
 
 struct MainView: View {
     @State private var showDocumentPicker = false
