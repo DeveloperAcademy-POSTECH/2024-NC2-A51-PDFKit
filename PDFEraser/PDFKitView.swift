@@ -10,7 +10,6 @@ import PDFKit
 
 struct PDFKitView: UIViewRepresentable {
     let url: URL //pdfURL
-    @Binding var searchText : String // 찾아야할 문자열
     
     var pdfView = PDFView()
     
@@ -27,7 +26,7 @@ struct PDFKitView: UIViewRepresentable {
         
     }
     
-    func addAnnotation() {
+    func addAnnotation(searchText: String) {
         guard let document = pdfView.document else { return }
         
         let selections = document.findString(searchText, withOptions: .caseInsensitive)
@@ -61,9 +60,5 @@ struct PDFKitView: UIViewRepresentable {
                 page.removeAnnotation(annotation)
             }
         }
-    }
-    
-    func showPDF(url: URL) {
-        pdfView.document = PDFDocument(url: url)
     }
 }

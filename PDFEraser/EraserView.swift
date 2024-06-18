@@ -19,32 +19,34 @@ struct EraserView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Button(action: {
-                    pdfKitView?.addAnnotation()
-                }) {
+                Button {
+                    pdfKitView?.addAnnotation(searchText: searchText)
+                } label: {
                     Text("Search")
                 }
-                .padding()
                 
                 //모든 주석 지우는 버튼
-                Button(action: {
+                Button {
                     pdfKitView?.clearAll()
-                }) {
+                } label: {
                     Text("Clear")
                 }
-                .padding()
             }
             
             if let pdfKitView {
                 pdfKitView
                     .edgesIgnoringSafeArea(.all)
             } else {
-                Text("PDF not found")
+                VStack {
+                    Spacer()
+                    Text("PDF not found")
+                    Spacer()
+                }
             }
         }
         .navigationTitle("\(url.lastPathComponent)")
         .onAppear {
-            pdfKitView = PDFKitView(url: url, searchText: $searchText)
+            pdfKitView = PDFKitView(url: url)
         }
     }
 }
