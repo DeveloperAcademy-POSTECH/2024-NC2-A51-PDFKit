@@ -10,20 +10,24 @@ import PDFKit
 
 struct EraserView: View {
     let url: URL
+    @Environment(\.dismiss) var dismiss
+    
     @State private var pdfKitView: PDFKitView?
     @State private var searchText = "" //찾을 텍스트
+    
+    @State private var showAlert: Bool = false
     
     var body: some View {
         VStack {
             HStack {
-                TextField("Search", text: $searchText)
+                TextField("가려줄 텍스트", text: $searchText)
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button {
                     pdfKitView?.addAnnotation(searchText: searchText)
                 } label: {
-                    Text("Search")
+                    Text("가리기")
                 }
                 
                 //모든 주석 지우는 버튼
@@ -47,21 +51,53 @@ struct EraserView: View {
         }
         .navigationTitle("\(url.lastPathComponent)")
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    saveAndSharePDF()
-                } label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .tint(Color.ioowRed)
-                }
-            }
+            ToolbarItem(placement: .navigationBarTrailing) { shareButton }
+            ToolbarItem(placement: .navigationBarTrailing) { completeButton }
         }
+        .alert("사본으로 저장", isPresented: $showAlert, actions: {
+            Button {
+                dismiss()
+            } label: {
+                Text("예")
+                    .tint(Color.ioowRed)
+            }
+            
+            Button {
+                dismiss()
+            } label: {
+                Text("아니오")
+                    .tint(Color.ioowRed)
+            }
+        }, message: {
+            Text("사본으로 저장하지 않으면\n원본에 변경 사항이 반영됩니다")
+        })
         .onAppear {
             pdfKitView = PDFKitView(url: url)
         }
     }
     
-    func saveAndSharePDF() {
+    // 공유 버튼
+    private var shareButton: some View {
+        Button {
+            saveAndSharePDF()
+        } label: {
+            Image(systemName: "square.and.arrow.up")
+                .tint(Color.ioowRed)
+        }
+    }
+    
+    // 완료 버튼
+    private var completeButton: some View {
+        Button {
+            showAlert = true
+        } label: {
+            Text("완료")
+                .tint(Color.ioowRed)
+        }
+    }
+    
+    // 공유하기
+    private func saveAndSharePDF() {
         guard let pdfDocument = pdfKitView?.pdfView.document else { return }
         
         // PDF 파일 저장 경로 설정
