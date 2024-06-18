@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7CC7362C207C43008E898D /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CC7352C207C43008E898D /* PDFKitView.swift */; };
+		1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CC7392C207DF1008E898D /* EraserView.swift */; };
+		1B7CC73C2C207E7D008E898D /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1B7CC73B2C207E7D008E898D /* sample.pdf */; };
 		519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519028282C2071D4008414A2 /* PDFEraserApp.swift */; };
 		5190282B2C2071D4008414A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5190282A2C2071D4008414A2 /* ContentView.swift */; };
 		5190282D2C2071D7008414A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190282C2C2071D7008414A2 /* Assets.xcassets */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B7CC7352C207C43008E898D /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
+		1B7CC7392C207DF1008E898D /* EraserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraserView.swift; sourceTree = "<group>"; };
+		1B7CC73B2C207E7D008E898D /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		519028252C2071D4008414A2 /* PDFEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		519028282C2071D4008414A2 /* PDFEraserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFEraserApp.swift; sourceTree = "<group>"; };
 		5190282A2C2071D4008414A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +62,10 @@
 			children = (
 				519028282C2071D4008414A2 /* PDFEraserApp.swift */,
 				5190282A2C2071D4008414A2 /* ContentView.swift */,
+				1B7CC7352C207C43008E898D /* PDFKitView.swift */,
+				1B7CC7392C207DF1008E898D /* EraserView.swift */,
 				5190282C2C2071D7008414A2 /* Assets.xcassets */,
+				1B7CC73B2C207E7D008E898D /* sample.pdf */,
 				5190282E2C2071D7008414A2 /* Preview Content */,
 			);
 			path = PDFEraser;
@@ -129,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				519028302C2071D7008414A2 /* Preview Assets.xcassets in Resources */,
+				1B7CC73C2C207E7D008E898D /* sample.pdf in Resources */,
 				519028372C207288008414A2 /* .gitignore in Resources */,
 				5190282D2C2071D7008414A2 /* Assets.xcassets in Resources */,
 			);
@@ -141,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */,
+				1B7CC7362C207C43008E898D /* PDFKitView.swift in Sources */,
 				5190282B2C2071D4008414A2 /* ContentView.swift in Sources */,
 				519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */,
 			);
