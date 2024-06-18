@@ -9,8 +9,6 @@ import SwiftUI
 
 struct MainView: View {
     @State private var showDocumentPicker = false
-    @State private var showEraserView = false
-    
     @State private var selectedUrl: URL?
     
     var body: some View {
@@ -24,7 +22,6 @@ struct MainView: View {
                 .sheet(isPresented: $showDocumentPicker) {
                     DocumentPicker { url in
                         selectedUrl = url
-                        showEraserView = true
                     }
                     .ignoresSafeArea()
                 }
@@ -43,10 +40,8 @@ struct MainView: View {
                 }
             }
             .padding(.horizontal, 20)
-            .navigationDestination(isPresented: $showEraserView) {
-                if let selectedUrl {
-                    EraserView(url: selectedUrl)
-                }
+            .navigationDestination(item: $selectedUrl) { url in
+                EraserView(url: url)
             }
         }
     }
@@ -73,37 +68,6 @@ struct MainView: View {
                 .foregroundStyle(Color.black)
             
             Spacer()
-        }
-    }
-}
-
-struct DocumentPicker: UIViewControllerRepresentable {
-    var onPicked: (URL) -> Void
-    
-    func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
-        let controller = UIDocumentPickerViewController(forOpeningContentTypes: [.pdf], asCopy: true)
-        controller.delegate = context.coordinator
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {
-        
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        Coordinator(onPicked: onPicked)
-    }
-    
-    class Coordinator: NSObject, UIDocumentPickerDelegate {
-        var onPicked: (URL) -> Void
-        
-        init(onPicked: @escaping (URL) -> Void) {
-            self.onPicked = onPicked
-        }
-        
-        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            guard let url = urls.first else { return }
-            onPicked(url)
         }
     }
 }
