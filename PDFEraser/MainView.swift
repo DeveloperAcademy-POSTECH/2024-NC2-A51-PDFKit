@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PDFKit
 
 struct MainView: View {
     @State private var showDocumentPicker = false
@@ -27,14 +28,8 @@ struct MainView: View {
                 }
                 
                 ForEach(0 ..< 27) { index in
-                    VStack(spacing: 8) {
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.2))
-                            .frame(width: 100, height: 100)
-                        
-                        Text("엄청나게 제목이 길어도 두 줄까지만 보여줘")
-                            .lineLimit(2)
-                        
+                    VStack(spacing: 8) {                    
+                        DocumentListView()
                         Spacer()
                     }
                 }
