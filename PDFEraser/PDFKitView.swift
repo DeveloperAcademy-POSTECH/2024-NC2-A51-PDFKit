@@ -26,7 +26,7 @@ struct PDFKitView: UIViewRepresentable {
         
     }
     
-    func addAnnotation(searchText: String) {
+    func addAnnotation(searchText: String, color: UIColor) {
         guard let document = pdfView.document else { return }
         
         let selections = document.findString(searchText, withOptions: .caseInsensitive)
@@ -39,7 +39,7 @@ struct PDFKitView: UIViewRepresentable {
                 let annotation = PDFAnnotation(bounds: bounds, forType: .square, withProperties: nil)
                 
                 annotation.color = .clear // 주석 테두리 색상
-                annotation.interiorColor = .white // 주석 내부 색상
+                annotation.interiorColor = color // 주석 내부 색상
                 
                 annotation.setValue(searchText, forAnnotationKey: .contents) // 주석에 사용자 정의 값 추가
                 

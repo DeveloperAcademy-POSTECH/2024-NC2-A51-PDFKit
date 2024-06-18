@@ -16,17 +16,20 @@ struct EraserView: View {
     
     @State private var searchTexts: [String] = []
     @State private var searchText = "" //찾을 텍스트
-    
+    @State private var selectedColor: Color = Color.white
     @State private var showAlert: Bool = false
     
     var body: some View {
         VStack {
-            HStack {
+            HStack(spacing: 12) {
                 TextField("가려줄 텍스트", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
+                ColorPicker(selection: $selectedColor, supportsOpacity: true) { }
+                    .frame(width: 24)
+                
                 Button {
-                    pdfKitView?.addAnnotation(searchText: searchText)
+                    pdfKitView?.addAnnotation(searchText: searchText, color: UIColor(selectedColor))
                     searchTexts.append(searchText)
                     searchText = ""
                 } label: {
@@ -34,6 +37,7 @@ struct EraserView: View {
                 }
             }
             .padding(.horizontal, 20)
+            .padding(.vertical, 8)
             
             if searchTexts.isEmpty == false {
                 ScrollView(.horizontal) {
