@@ -11,10 +11,11 @@
 		1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CC7392C207DF1008E898D /* EraserView.swift */; };
 		1B7CC73C2C207E7D008E898D /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1B7CC73B2C207E7D008E898D /* sample.pdf */; };
 		519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519028282C2071D4008414A2 /* PDFEraserApp.swift */; };
-		5190282B2C2071D4008414A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5190282A2C2071D4008414A2 /* ContentView.swift */; };
 		5190282D2C2071D7008414A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190282C2C2071D7008414A2 /* Assets.xcassets */; };
 		519028302C2071D7008414A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190282F2C2071D7008414A2 /* Preview Assets.xcassets */; };
 		519028372C207288008414A2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 519028362C207288008414A2 /* .gitignore */; };
+		519028392C215838008414A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519028382C215838008414A2 /* MainView.swift */; };
+		5190283B2C2165BA008414A2 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5190283A2C2165BA008414A2 /* DocumentPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,10 +24,11 @@
 		1B7CC73B2C207E7D008E898D /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		519028252C2071D4008414A2 /* PDFEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		519028282C2071D4008414A2 /* PDFEraserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFEraserApp.swift; sourceTree = "<group>"; };
-		5190282A2C2071D4008414A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5190282C2C2071D7008414A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5190282F2C2071D7008414A2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		519028362C207288008414A2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		519028382C215838008414A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5190283A2C2165BA008414A2 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				519028282C2071D4008414A2 /* PDFEraserApp.swift */,
-				5190282A2C2071D4008414A2 /* ContentView.swift */,
+				5190283A2C2165BA008414A2 /* DocumentPicker.swift */,
+				519028382C215838008414A2 /* MainView.swift */,
 				1B7CC7352C207C43008E898D /* PDFKitView.swift */,
 				1B7CC7392C207DF1008E898D /* EraserView.swift */,
 				5190282C2C2071D7008414A2 /* Assets.xcassets */,
@@ -153,7 +156,8 @@
 			files = (
 				1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */,
 				1B7CC7362C207C43008E898D /* PDFKitView.swift in Sources */,
-				5190282B2C2071D4008414A2 /* ContentView.swift in Sources */,
+				519028392C215838008414A2 /* MainView.swift in Sources */,
+				5190283B2C2165BA008414A2 /* DocumentPicker.swift in Sources */,
 				519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

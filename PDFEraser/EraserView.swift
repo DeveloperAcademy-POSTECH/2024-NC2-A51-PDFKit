@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EraserView: View {
+    let url: URL
     @State private var pdfKitView: PDFKitView?
     @State private var searchText = "" //찾을 텍스트
     
@@ -18,38 +19,34 @@ struct EraserView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                Button(action: {
-                    pdfKitView?.addAnnotation()
-                }) {
+                Button {
+                    pdfKitView?.addAnnotation(searchText: searchText)
+                } label: {
                     Text("Search")
                 }
-                .padding()
                 
                 //모든 주석 지우는 버튼
-                Button(action: {
+                Button {
                     pdfKitView?.clearAll()
-                }) {
+                } label: {
                     Text("Clear")
                 }
-                .padding()
             }
             
-            //임시적으로 번들 내 sample 파일과 연결해줌
-            if let pdfURL = Bundle.main.url(forResource: "sample", withExtension: "pdf") {
-                pdfKitView?
+            if let pdfKitView {
+                pdfKitView
                     .edgesIgnoringSafeArea(.all)
             } else {
-                Text("PDF not found")
+                VStack {
+                    Spacer()
+                    Text("PDF not found")
+                    Spacer()
+                }
             }
         }
+        .navigationTitle("\(url.lastPathComponent)")
         .onAppear {
-            if let pdfURL = Bundle.main.url(forResource: "sample", withExtension: "pdf") {
-                pdfKitView = PDFKitView(url: pdfURL, searchText: $searchText)
-            }
+            pdfKitView = PDFKitView(url: url)
         }
     }
-}
-
-#Preview {
-    EraserView()
 }

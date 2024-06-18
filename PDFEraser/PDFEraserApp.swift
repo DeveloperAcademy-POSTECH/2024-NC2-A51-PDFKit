@@ -11,7 +11,9 @@ import SwiftUI
 struct PDFEraserApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MainView()
+            }
         }
     }
 }
