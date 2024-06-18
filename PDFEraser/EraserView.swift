@@ -29,9 +29,11 @@ struct EraserView: View {
                     .frame(width: 24)
                 
                 Button {
-                    pdfKitView?.addAnnotation(searchText: searchText, color: UIColor(selectedColor))
-                    searchTexts.append(searchText)
-                    searchText = ""
+                    if searchText.isEmpty == false {
+                        pdfKitView?.addAnnotation(searchText: searchText, color: UIColor(selectedColor))
+                        searchTexts.append(searchText)
+                        searchText = ""
+                    }
                 } label: {
                     Text("지우기")
                 }
