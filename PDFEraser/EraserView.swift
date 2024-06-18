@@ -9,10 +9,12 @@ import SwiftUI
 import PDFKit
 
 struct EraserView: View {
-    let url: URL
     @Environment(\.dismiss) var dismiss
     
+    let url: URL
     @State private var pdfKitView: PDFKitView?
+    
+    @State private var searchTexts: [String] = []
     @State private var searchText = "" //찾을 텍스트
     
     @State private var showAlert: Bool = false
@@ -21,20 +23,42 @@ struct EraserView: View {
         VStack {
             HStack {
                 TextField("가려줄 텍스트", text: $searchText)
-                    .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button {
                     pdfKitView?.addAnnotation(searchText: searchText)
+                    searchTexts.append(searchText)
+                    searchText = ""
                 } label: {
-                    Text("가리기")
+                    Text("지우기")
                 }
-                
-                //모든 주석 지우는 버튼
-                Button {
-                    pdfKitView?.clearAll()
-                } label: {
-                    Text("Clear")
+            }
+            .padding(.horizontal, 20)
+            
+            if searchTexts.isEmpty == false {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(0 ..< searchTexts.count, id: \.self) { index in
+                            Button {
+                                pdfKitView?.clear(for: searchTexts[index])
+                                searchTexts.remove(at: index)
+                            } label: {
+                                HStack(spacing: 4) {
+                                    Text(searchTexts[index])
+                                        .font(.body)
+                                    
+                                    Image(systemName: "xmark")
+                                        .font(.caption2)
+                                }
+                                .foregroundStyle(Color.black)
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 4)
+                                .background(Color.ioowRed.opacity(0.2))
+                                .clipShape(RoundedRectangle(cornerRadius: 50))
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
                 }
             }
             
