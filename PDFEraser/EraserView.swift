@@ -128,7 +128,7 @@ struct EraserView: View {
     
     // 공유하기
     private func saveAndSharePDF() {
-        guard let pdfDocument = pdfKitView?.pdfView.document else { return }
+        guard let pdfDocument = pdfKitView?.PDFConverter() else { return }
         
         // PDF 파일 저장 경로 설정
         let fileManager = FileManager.default
