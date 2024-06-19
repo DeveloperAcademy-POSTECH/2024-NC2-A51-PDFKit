@@ -55,7 +55,7 @@ struct PDFKitView: UIViewRepresentable {
         for pageIndex in 0..<pageCount {
             guard let page = document.page(at: pageIndex) else { continue }
             let annotations = page.annotations
-
+            
             for annotation in annotations {
                 page.removeAnnotation(annotation)
             }
