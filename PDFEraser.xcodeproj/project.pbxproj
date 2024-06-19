@@ -10,20 +10,22 @@
 		1B7CC7362C207C43008E898D /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CC7352C207C43008E898D /* PDFKitView.swift */; };
 		1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CC7392C207DF1008E898D /* EraserView.swift */; };
 		1B7CC73C2C207E7D008E898D /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1B7CC73B2C207E7D008E898D /* sample.pdf */; };
-		1BC55F2A2C21814500A3ED82 /* DocumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC55F292C21814500A3ED82 /* DocumentListView.swift */; };
+		1BC55F2A2C21814500A3ED82 /* DocumentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC55F292C21814500A3ED82 /* DocumentItem.swift */; };
 		519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519028282C2071D4008414A2 /* PDFEraserApp.swift */; };
 		5190282D2C2071D7008414A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190282C2C2071D7008414A2 /* Assets.xcassets */; };
 		519028302C2071D7008414A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190282F2C2071D7008414A2 /* Preview Assets.xcassets */; };
 		519028372C207288008414A2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 519028362C207288008414A2 /* .gitignore */; };
 		519028392C215838008414A2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519028382C215838008414A2 /* MainView.swift */; };
 		5190283B2C2165BA008414A2 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5190283A2C2165BA008414A2 /* DocumentPicker.swift */; };
+		5190283D2C22B38C008414A2 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5190283C2C22B38C008414A2 /* Document.swift */; };
+		519028412C22CF91008414A2 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 519028402C22CF91008414A2 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B7CC7352C207C43008E898D /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
 		1B7CC7392C207DF1008E898D /* EraserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraserView.swift; sourceTree = "<group>"; };
 		1B7CC73B2C207E7D008E898D /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
-		1BC55F292C21814500A3ED82 /* DocumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListView.swift; sourceTree = "<group>"; };
+		1BC55F292C21814500A3ED82 /* DocumentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItem.swift; sourceTree = "<group>"; };
 		519028252C2071D4008414A2 /* PDFEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		519028282C2071D4008414A2 /* PDFEraserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFEraserApp.swift; sourceTree = "<group>"; };
 		5190282C2C2071D7008414A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +33,8 @@
 		519028362C207288008414A2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		519028382C215838008414A2 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		5190283A2C2165BA008414A2 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		5190283C2C22B38C008414A2 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		519028402C22CF91008414A2 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +73,11 @@
 				519028382C215838008414A2 /* MainView.swift */,
 				1B7CC7352C207C43008E898D /* PDFKitView.swift */,
 				1B7CC7392C207DF1008E898D /* EraserView.swift */,
-				1BC55F292C21814500A3ED82 /* DocumentListView.swift */,
+				1BC55F292C21814500A3ED82 /* DocumentItem.swift */,
+				5190283C2C22B38C008414A2 /* Document.swift */,
 				5190282C2C2071D7008414A2 /* Assets.xcassets */,
 				1B7CC73B2C207E7D008E898D /* sample.pdf */,
+				519028402C22CF91008414A2 /* Launch Screen.storyboard */,
 				5190282E2C2071D7008414A2 /* Preview Content */,
 			);
 			path = PDFEraser;
@@ -146,6 +152,7 @@
 				519028302C2071D7008414A2 /* Preview Assets.xcassets in Resources */,
 				1B7CC73C2C207E7D008E898D /* sample.pdf in Resources */,
 				519028372C207288008414A2 /* .gitignore in Resources */,
+				519028412C22CF91008414A2 /* Launch Screen.storyboard in Resources */,
 				5190282D2C2071D7008414A2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,8 +167,9 @@
 				1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */,
 				1B7CC7362C207C43008E898D /* PDFKitView.swift in Sources */,
 				519028392C215838008414A2 /* MainView.swift in Sources */,
-				1BC55F2A2C21814500A3ED82 /* DocumentListView.swift in Sources */,
+				1BC55F2A2C21814500A3ED82 /* DocumentItem.swift in Sources */,
 				5190283B2C2165BA008414A2 /* DocumentPicker.swift in Sources */,
+				5190283D2C22B38C008414A2 /* Document.swift in Sources */,
 				519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +310,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -334,6 +343,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
