@@ -21,7 +21,10 @@
 > 개인정보가 들어간 PDF 파일에서 검색을 통해 지우고 싶은 개인정보를 한번에 지우고, 사용한 문서를 한 곳에 모아보기.
 
 ## 🖼️ Prototype
-
+![PDFKitPrototype](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-A51-PDFKit/assets/113221248/ece02542-1eda-4ad9-8c92-7fa31ab6d718)
+* PDF를 불러오기 / 사용한 문서를 앱 내에 모아보고 불러오기
+* PDF 파일에서 원하는 텍스트를 찾아 픽커에서 고른 색상의 사각형 주석으로 덮어주기
+* 내보내기 (공유하기)
 
 ## 🛠️ About Code
 (핵심 코드에 대한 설명 추가)
