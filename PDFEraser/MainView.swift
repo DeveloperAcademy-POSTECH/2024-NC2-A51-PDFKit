@@ -5,11 +5,14 @@
 //  Created by Anjin on 6/18/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct MainView: View {
-    @State private var showDocumentPicker = false
-    @State private var selectedUrl: URL?
+    @Environment(\.modelContext) private var modelContext
+    @Query private var documents: [Document] // 모든 documents
+    @State private var selectedDocument: Document? // 새 작업 document
+    @State private var showDocumentPicker = false // 문서 불러오기
     
     var body: some View {
         ScrollView {
@@ -21,21 +24,24 @@ struct MainView: View {
                 }
                 .sheet(isPresented: $showDocumentPicker) {
                     DocumentPicker { url in
-                        selectedUrl = url
+                        let newDocument: Document = Document(url: url)
+                        selectedDocument = newDocument
+                        modelContext.insert(newDocument)
                     }
                     .ignoresSafeArea()
                 }
                 
-                ForEach(0 ..< 27) { index in
-                    VStack(spacing: 8) {                    
-                        DocumentListView()
+                ForEach(documents) { document in
+                    VStack(spacing: 8) {
+                        DocumentListView(document: document)
+                        
                         Spacer()
                     }
                 }
             }
             .padding(.horizontal, 20)
-            .navigationDestination(item: $selectedUrl) { url in
-                EraserView(url: url)
+            .navigationDestination(item: $selectedDocument) { document in
+                EraserView(url: document.url)
             }
         }
     }
