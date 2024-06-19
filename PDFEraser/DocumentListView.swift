@@ -55,20 +55,8 @@ struct DocumentListView: View {
     //url을 통해 file 명을 불러오는 func
     func URLtoFileName(url : URL) -> String {
         //url을 문자열로 변환
-        let urlString = "\(url)"
-        //정규표현식
-        // / 뒤에부터 .뒤에 3~4번 반복되는 문자열까지 제일 끝에서부터 읽음
-        let pattern = "[^/]+\\.[a-zA-Z]{3,4}$"
-
-        if let regex = try? NSRegularExpression(pattern: pattern),
-           let match = regex.firstMatch(in: urlString, range: NSRange(urlString.startIndex..., in: urlString)) {
-            let fileNameRange = Range(match.range, in: urlString)!
-            let fileName = String(urlString[fileNameRange])
-
-            return fileName // Output: sample.pdf
-        } else {
-            return "파일명을 불러오지 못했습니다."
-        }
+        let fileName = url.lastPathComponent
+        return fileName // Output: sample.pdf
     }
 }
 
