@@ -15,33 +15,52 @@ struct MainView: View {
     @State private var showDocumentPicker = false // 문서 불러오기
     
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 0) {
-                Button {
-                    showDocumentPicker = true
-                } label: {
-                    newTaskButtonView
-                }
-                .sheet(isPresented: $showDocumentPicker) {
-                    DocumentPicker { url in
-                        let newDocument: Document = Document(url: url)
-                        selectedDocument = newDocument
-                        modelContext.insert(newDocument)
-                    }
-                    .ignoresSafeArea()
-                }
+        VStack(spacing: 30) {
+            HStack {
+                Image(systemName: "square.and.arrow.down.on.square")
+                    .font(.system(size: 24)).bold()
+                    .foregroundStyle(Color.ioowRed)
                 
-                ForEach(documents) { document in
-                    VStack(spacing: 8) {
-                        DocumentListView(document: document)
-                        
-                        Spacer()
+                Text("PDF Eraser")
+                    .font(.title2).bold()
+                
+                Spacer()
+            }
+            .padding(.top, 20)
+            .padding(.horizontal, 20)
+            
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 0) {
+                    Button {
+                        showDocumentPicker = true
+                    } label: {
+                        newTaskButtonView
+                    }
+                    .sheet(isPresented: $showDocumentPicker) {
+                        DocumentPicker { url in
+                            let newDocument: Document = Document(url: url)
+                            selectedDocument = newDocument
+                            modelContext.insert(newDocument)
+                        }
+                        .ignoresSafeArea()
+                    }
+                    
+                    ForEach(documents) { document in
+                        VStack(spacing: 8) {
+                            Button {
+                                selectedDocument = document
+                            } label: {
+                                DocumentListView(document: document)
+                            }
+                            
+                            Spacer()
+                        }
                     }
                 }
-            }
-            .padding(.horizontal, 20)
-            .navigationDestination(item: $selectedDocument) { document in
-                EraserView(url: document.url)
+                .padding(.horizontal, 20)
+                .navigationDestination(item: $selectedDocument) { document in
+                    EraserView(url: document.url)
+                }
             }
         }
     }
