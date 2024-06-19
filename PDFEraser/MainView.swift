@@ -18,7 +18,7 @@ struct MainView: View {
     @State private var selectedDocuments: [Document] = []
     
     var body: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 20) {
             HStack {
                 Image(systemName: "square.and.arrow.down.on.square")
                     .font(.system(size: 24)).bold()
@@ -32,6 +32,9 @@ struct MainView: View {
                 if isOnSelection {
                     Button {
                         // 삭제 기능
+                        selectedDocuments.forEach { document in
+                            modelContext.delete(document)
+                        }
                     } label: {
                         Text("삭제")
                             .font(.body)
@@ -116,6 +119,7 @@ struct MainView: View {
                     }
                 }
                 .padding(.horizontal, 20)
+                .padding(.top, 10)
                 .navigationDestination(item: $selectedDocument) { document in
                     EraserView(url: document.url)
                 }

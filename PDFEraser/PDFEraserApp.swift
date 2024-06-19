@@ -12,7 +12,7 @@ import SwiftUI
 struct PDFEraserApp: App {
     var modelContainer: ModelContainer {
         let schema = Schema([Document.self])
-        let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
+        let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
         do {
             let container = try ModelContainer(for: schema, configurations: [configuration])
