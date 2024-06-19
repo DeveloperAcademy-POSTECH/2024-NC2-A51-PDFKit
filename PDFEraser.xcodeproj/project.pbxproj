@@ -10,7 +10,7 @@
 		1B7CC7362C207C43008E898D /* PDFKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CC7352C207C43008E898D /* PDFKitView.swift */; };
 		1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7CC7392C207DF1008E898D /* EraserView.swift */; };
 		1B7CC73C2C207E7D008E898D /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1B7CC73B2C207E7D008E898D /* sample.pdf */; };
-		1BC55F2A2C21814500A3ED82 /* DocumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC55F292C21814500A3ED82 /* DocumentListView.swift */; };
+		1BC55F2A2C21814500A3ED82 /* DocumentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC55F292C21814500A3ED82 /* DocumentItem.swift */; };
 		519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519028282C2071D4008414A2 /* PDFEraserApp.swift */; };
 		5190282D2C2071D7008414A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190282C2C2071D7008414A2 /* Assets.xcassets */; };
 		519028302C2071D7008414A2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5190282F2C2071D7008414A2 /* Preview Assets.xcassets */; };
@@ -24,7 +24,7 @@
 		1B7CC7352C207C43008E898D /* PDFKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitView.swift; sourceTree = "<group>"; };
 		1B7CC7392C207DF1008E898D /* EraserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EraserView.swift; sourceTree = "<group>"; };
 		1B7CC73B2C207E7D008E898D /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
-		1BC55F292C21814500A3ED82 /* DocumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListView.swift; sourceTree = "<group>"; };
+		1BC55F292C21814500A3ED82 /* DocumentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentItem.swift; sourceTree = "<group>"; };
 		519028252C2071D4008414A2 /* PDFEraser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDFEraser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		519028282C2071D4008414A2 /* PDFEraserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFEraserApp.swift; sourceTree = "<group>"; };
 		5190282C2C2071D7008414A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 				519028382C215838008414A2 /* MainView.swift */,
 				1B7CC7352C207C43008E898D /* PDFKitView.swift */,
 				1B7CC7392C207DF1008E898D /* EraserView.swift */,
-				1BC55F292C21814500A3ED82 /* DocumentListView.swift */,
+				1BC55F292C21814500A3ED82 /* DocumentItem.swift */,
 				5190283C2C22B38C008414A2 /* Document.swift */,
 				5190282C2C2071D7008414A2 /* Assets.xcassets */,
 				1B7CC73B2C207E7D008E898D /* sample.pdf */,
@@ -163,7 +163,7 @@
 				1B7CC73A2C207DF1008E898D /* EraserView.swift in Sources */,
 				1B7CC7362C207C43008E898D /* PDFKitView.swift in Sources */,
 				519028392C215838008414A2 /* MainView.swift in Sources */,
-				1BC55F2A2C21814500A3ED82 /* DocumentListView.swift in Sources */,
+				1BC55F2A2C21814500A3ED82 /* DocumentItem.swift in Sources */,
 				5190283B2C2165BA008414A2 /* DocumentPicker.swift in Sources */,
 				5190283D2C22B38C008414A2 /* Document.swift in Sources */,
 				519028292C2071D4008414A2 /* PDFEraserApp.swift in Sources */,

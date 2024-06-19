@@ -50,7 +50,7 @@ struct MainView: View {
                             Button {
                                 selectedDocument = document
                             } label: {
-                                DocumentListView(document: document)
+                                DocumentItem(document: document)
                             }
                             
                             Spacer()

@@ -8,7 +8,7 @@
 import SwiftUI
 import PDFKit
 
-struct DocumentListView: View {
+struct DocumentItem: View {
     let document: Document
     
     var body: some View {
