@@ -66,6 +66,7 @@ struct MainView: View {
             
             Text("새로운 작업")
                 .foregroundStyle(Color.black)
+                .font(.subheadline)
             
             Spacer()
         }

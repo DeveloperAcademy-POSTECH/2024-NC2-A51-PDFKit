@@ -18,6 +18,7 @@ struct DocumentListView: View {
                 .frame(width: 100, height: 100)
             
             Text(document.title)
+                .font(.subheadline)
                 .lineLimit(2)
                 .frame(width: 100)
         }
