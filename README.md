@@ -27,7 +27,6 @@
 * 내보내기 (공유하기)
 
 ## 🛠️ About Code
-(핵심 코드에 대한 설명 추가)
 - SwiftUI에 연결하기 위해 PDFViewRepresentable을 활용
 - PDFView()를 생성하고, pdfView.document에게 PDFDocument(url: url)을 이용해 PDF를 가져와 적용
 - PDFDocument의 findString으로 텍스트를 찾아 반환되는 PDFSelection을 이용하여 특정 텍스트의 영역을 통해 주석 적용 (가려주기)
