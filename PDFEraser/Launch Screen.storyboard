@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.down.on.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-9x-4qn">
-                                <rect key="frame" x="136.66666666666666" y="375.66666666666669" width="119.99999999999997" height="125.33333333333337"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-9x-4qn">
+                                <rect key="frame" x="136.66666666666666" y="379" width="119.99999999999997" height="119.66666666666669"/>
                                 <color key="tintColor" name="ioowRed"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="TlX-VS-LYB"/>
@@ -39,7 +39,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.arrow.down.on.square" catalog="system" width="114" height="128"/>
+        <image name="doc" catalog="system" width="115" height="128"/>
         <namedColor name="ioowRed">
             <color red="0.83899998664855957" green="0.29800000786781311" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

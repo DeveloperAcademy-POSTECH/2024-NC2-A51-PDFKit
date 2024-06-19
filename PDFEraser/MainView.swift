@@ -20,7 +20,7 @@ struct MainView: View {
     var body: some View {
         VStack(spacing: 20) {
             HStack {
-                Image(systemName: "square.and.arrow.down.on.square")
+                Image(systemName: "doc")
                     .font(.system(size: 24)).bold()
                     .foregroundStyle(Color.ioowRed)
                 
