@@ -14,6 +14,9 @@ struct MainView: View {
     @State private var selectedDocument: Document? // 새 작업 document
     @State private var showDocumentPicker = false // 문서 불러오기
     
+    @State private var isOnSelection: Bool = false
+    @State private var selectedDocuments: [Document] = []
+    
     var body: some View {
         VStack(spacing: 30) {
             HStack {
@@ -25,6 +28,34 @@ struct MainView: View {
                     .font(.title2).bold()
                 
                 Spacer()
+                
+                if isOnSelection {
+                    Button {
+                        // 삭제 기능
+                    } label: {
+                        Text("삭제")
+                            .font(.body)
+                            .foregroundStyle(Color.ioowRed)
+                    }
+                    
+                    Button {
+                        isOnSelection = false
+                        selectedDocuments.removeAll()
+                    } label: {
+                        Text("완료")
+                            .font(.body)
+                            .foregroundStyle(Color.ioowRed)
+                    }
+                } else {
+                    Button {
+                        isOnSelection = true
+                    } label: {
+                        Text("선택")
+                            .font(.body)
+                            .foregroundStyle(Color.ioowRed)
+                    }
+                }
+                
             }
             .padding(.top, 20)
             .padding(.horizontal, 20)
@@ -48,9 +79,36 @@ struct MainView: View {
                     ForEach(documents) { document in
                         VStack(spacing: 8) {
                             Button {
-                                selectedDocument = document
+                                if isOnSelection {
+                                    if let index = selectedDocuments.firstIndex(of: document) {
+                                        selectedDocuments.remove(at: index)
+                                    } else {
+                                        selectedDocuments.append(document)
+                                    }
+                                } else {
+                                    selectedDocument = document
+                                }
                             } label: {
-                                DocumentItem(document: document)
+                                ZStack(alignment: .top) {
+                                    DocumentItem(document: document)
+                                    
+                                    if isOnSelection {
+                                        if selectedDocuments.contains(document) {
+                                            Image(systemName: "checkmark.circle.fill")
+                                                .font(.system(size: 20))
+                                                .foregroundStyle(Color.ioowRed)
+                                                .background(Color.white)
+                                                .clipShape(RoundedRectangle(cornerRadius: 100))
+                                                .padding(.top, 50)
+                                        } else {
+                                            Image(systemName: "circle")
+                                                .font(.system(size: 20))
+                                                .foregroundStyle(Color.white)
+                                                .shadow(color: .black.opacity(0.4), radius: 0, x: 0, y: 2)
+                                                .padding(.top, 50)
+                                        }
+                                    }
+                                }
                             }
                             
                             Spacer()
@@ -93,5 +151,16 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+//    MainView()
+    VStack {
+        Spacer()
+        Image(systemName: "checkmark.circle.fill")
+            .font(.largeTitle)
+            .foregroundStyle(Color.ioowRed)
+            .background(Color.white)
+            .clipShape(RoundedRectangle(cornerRadius: 100))
+        Spacer()
+        HStack { Spacer()}
+    }
+    .background(Color.gray.opacity(0.6))
 }
