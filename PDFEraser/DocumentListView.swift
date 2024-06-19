@@ -14,12 +14,15 @@ struct DocumentListView: View {
     var body: some View {
         VStack(spacing: 8) {
             document.thumbnailImage // Image
-                .shadow(color: .black.opacity(0.1), radius: 12)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100)
+                .shadow(color: .black.opacity(0.1), radius: 12)
             
             Text(document.title)
                 .font(.subheadline)
                 .lineLimit(2)
+                .multilineTextAlignment(.center)
                 .frame(width: 100)
         }
     }
