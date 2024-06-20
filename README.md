@@ -36,7 +36,9 @@ PDFKit은 PDF를 활용할 수 있도록 하는 프레임워크입니다.
 
 
 ## 🖼️ Prototype
-![PDFKitPrototype](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-A51-PDFKit/assets/113221248/ece02542-1eda-4ad9-8c92-7fa31ab6d718)
+![NC2_IOOW 001](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-A51-PDFKit/assets/113221248/8c102f46-9f3e-4f36-8e3f-96e0eedacb59)
+![NC2_IOOW 002](https://github.com/DeveloperAcademy-POSTECH/2024-NC2-A51-PDFKit/assets/113221248/b51dc2c7-bf44-42c4-a6e5-c2d08cd8f775)
+
 * PDF를 불러오기 / 사용한 문서를 앱 내에 모아보고 불러오기
 * PDF 파일에서 원하는 텍스트를 찾아 픽커에서 고른 색상의 사각형 주석으로 덮어주기
 * 내보내기 (공유하기)
